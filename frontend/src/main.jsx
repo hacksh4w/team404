@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import LoginPage from "./pages/login";
-//import Dashboard from "./Dashboard";
+import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./ProtectedRoute"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
