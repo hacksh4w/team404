@@ -1,13 +1,23 @@
 import { Box, Flex, Show, HStack, Spacer, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { useState, useEffect } from "react";
+
 
 const Navbar = () => {
   const { user, logout } = useAuth();
+ 
+  const [storedUser, setStoredUser] = useState(null); //avatar to be added
+  
 
+  useEffect(() => {
+    setStoredUser(localStorage.getItem("user"));
+  }, [user]);
+
+  
   return (
-    <Box bg="blue.500" p={4} color="white" width={["100%"]}>
-      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+    <Box bg="blue.500" color="white" width={["100%"]} m={0} top={0}>
+      <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
         <HStack w="32%">
             Nameee
         </HStack>
@@ -20,22 +30,22 @@ const Navbar = () => {
               display={{ md: "none" }}
               onClick={isOpen ? onClose : onOpen}
             /> */}
-            <HStack spacing={8} alignItems={"center"}>
+            <HStack spacing={8} alignItems={"center"} >
               <HStack
                 as={"nav"}
                 spacing={4}
                 display={{ base: "none", md: "flex" }}
                 id="myDIV"
               >
-                <Button className="btnRes">
+                <Button className="btnRes" m={4}>
                 <Link to="/dashboard" m={2}>Dashboard</Link>
                 </Button>
 
-                <Button className="btnRes">
+                <Button className="btnRes" m={4}>
                 <Link to="/form" m={2}>Upload</Link>
                 </Button>
 
-                <Button className="btnRes">
+                <Button className="btnRes" m={4}>
                   <a href="#Skills">
                     {" "}
                     <b>Profile</b>
