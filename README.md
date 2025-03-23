@@ -1,4 +1,4 @@
-# **<div align="center"> SiteCheck < /div>**  
+# **<div align="center"> SiteCheck </div>**  
 **Team 404** present **SiteCheck** a comprehensive Construction Site Management Platform<
 A comprehensive platform designed to streamline document management and project execution for construction sites. From initial contract handling to real-time progress tracking, our system ensures seamless communication and efficient workflow among stakeholders.
 
@@ -14,7 +14,7 @@ A comprehensive platform designed to streamline document management and project 
 ---
 
 ## 🏗️ Tech Stack  
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"><img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white"><img src="https://img.shields.io/badge/Vision_Transformer-0081A7?style=for-the-badge&logo=pytorch&logoColor=white"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"><img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white">
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"><img src="https://img.shields.io/badge/ChakraUI-38B2AC?style=for-the-badge&logo=chakraui&logoColor=white"><img src="https://img.shields.io/badge/Vision_Transformer-0081A7?style=for-the-badge&logo=pytorch&logoColor=white"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"><img src="https://img.shields.io/badge/Tesseract-43853D?style=for-the-badge&logo=tesseract&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white">
 
 ---
 
@@ -40,6 +40,24 @@ Our platform leverages **Tesseract OCR** and **Natural Language Processing (NLP)
 1. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
 1. [Alaka A J](https://github.com/alaka03aj)
 1. [Arun Shaji](https://github.com/4run280)
+
+# 🚧 Construction Site Management Platform- Site Check
+
+## 🏗️ Problem Statement  
+Managing construction projects involves handling a vast number of documents, including contracts, legal notices, loan agreements, and daily reports. Traditional document management methods are inefficient, leading to misplaced records, miscommunication, and project delays. Tracking progress and ensuring compliance manually is time-consuming and prone to errors, resulting in cost overruns and project inefficiencies.  
+
+## 🎯 Vision  
+To revolutionize construction site management by providing an AI-powered platform that streamlines document processing, enhances collaboration, and ensures real-time progress tracking. Our goal is to reduce paperwork bottlenecks, improve decision-making, and increase project efficiency through intelligent automation.  
+
+## 🔨 Solution  
+Our **Construction Site Management Platform** integrates **Intelligent Document Processing (IDP)** with **AI-powered tracking** to simplify document handling from project inception to execution.  
+
+✅ **Document Identification & Tagging** – Automatically categorize documents as High Risk, Medium, or Low for better prioritization.  
+✅ **Reminders & Notifications** – Stay on top of deadlines with automated alerts for pending approvals and approaching due dates.  
+✅ **AI-powered Document Processing & Searching** – Utilize OCR and NLP for quick document retrieval and intelligent search capabilities.  
+✅ **Daily Reports & Progress Tracking** – Supervisors can submit real-time updates, ensuring transparency and accountability in project execution.  
+
+By digitizing and automating construction document workflows, we help **reduce delays, enhance compliance, and improve overall project efficiency**. 🚀  
 
 ## Future Enhancements 
 - [x] **Milestone tracking **
