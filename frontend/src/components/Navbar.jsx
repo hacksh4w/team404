@@ -32,7 +32,7 @@ const Navbar = () => {
               display={{ md: "none" }}
               onClick={isOpen ? onClose : onOpen}
             /> */}
-            <HStack spacing={8} alignItems={"center"} >
+            <HStack spacing={8} alignItems={"center"} pl={20} >
               <HStack
                 as={"nav"}
                 spacing={4}
