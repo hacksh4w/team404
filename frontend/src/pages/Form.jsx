@@ -79,7 +79,7 @@ const Form = () => {
     <ToastContainer /> 
       <Box mb={4}><Heading m={8}> PDF FORM </Heading></Box>
       <Box>
-        <Stack spacing={4} w="80%" alignContent='center'>
+        <Stack spacing={8} w="80%" alignContent='center'>
         <Field.Root required>
           <Field.Label>
             Date <Field.RequiredIndicator />
@@ -121,30 +121,47 @@ const Form = () => {
             onChange={handleChange}
           />
           </Field.Root>
-          <Input
-            mt={10}
-            w="20%"
-            type="file"
-            accept="image/*,application/pdf"
-            onChange={handleFileChange}
+          <Box mt={4} textAlign="center">
+          <Input 
+            id="file-upload" 
+            type="file" 
+            accept="image/*,application/pdf" 
+            onChange={handleFileChange} 
+            display="none"  // Hides the default input
           />
+          
+          <label htmlFor="file-upload">
+            <Button 
+              as="span"  
+              size="md" 
+              colorScheme="blue" 
+              bgGradient="linear(to-r, blue.400, blue.600)" 
+              _hover={{ bgGradient: "linear(to-r, blue.500, blue.700)" }} 
+              px={6} 
+              py={3} 
+              borderRadius="md"
+              cursor="pointer"
+            >
+              📂 Choose File
+            </Button>
+          </label>
+        
+          {selectedFile && (
+            <Text mt={2} fontSize="sm" color="gray.600">
+              Selected File: {selectedFile.name}
+            </Text>
+          )}
+        </Box>
          
         </Stack>
       </Box>
       <Button 
-        m={2} 
+        m={8} 
         onClick={handleSubmit}
         isDisabled={!selectedFile || !formData.date || !formData.supervisorName || !formData.subject}
       >
         Submit
       </Button>
-
-      {/* Display selected file name */}
-      {selectedFile && (
-        <Box mt={2}>
-          Selected file: {selectedFile.name}
-        </Box>
-      )}
     </Container>
   );
 };
