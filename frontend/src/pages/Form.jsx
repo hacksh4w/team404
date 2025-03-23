@@ -75,7 +75,7 @@ const Form = () => {
     <Container p={4} pt={20}>
       <Heading> Upload your Report Here!! </Heading>
     <Box p={8}>
-    <VStack w='85%' pl={10}>
+    <VStack w='85%' pl={10} >
         <Input name="date" type="date" placeholder="Date" variant="outline" value={formData.date} onChange={handleChange} />
         <Input name="supervisorName" type="text"  required='required' placeholder="Supervisor Name" variant="outline" value={formData.supervisorName} onChange={handleChange} />
         <Input name="subject" placeholder="Subject" variant="outline" value={formData.subject} onChange={handleChange} />
