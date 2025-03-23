@@ -36,6 +36,18 @@ def upload_file():
         file = request.files['file'] 
         file.save(file.filename)
         analysis_result = extract_text_from_image(file)
+        new_entry = {'analysis': analysis_result, 'date': request.form.get('date', ''),
+                'supervisorName': request.form.get('supervisorName', ''),
+                'subject': request.form.get('subject', ''),
+                'doctype': request.form.get('doctype', '')}
+        
+        try:
+            with open('uploads/data.txt', 'w') as f:
+                json_string = json.dumps(new_entry, indent=4)
+                f.write(json_string)
+        except Exception as e:
+            print(f"Error writing to txt file: {e}")
+
         return jsonify({
                 'success': True,
                 'analysis': analysis_result

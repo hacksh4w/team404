@@ -1,12 +1,24 @@
 import React, { useState } from "react";
-import { 
-  Container, VStack, Heading, Text, HStack, Box, Field, Button, Input 
+import {
+  Container,
+  VStack,
+  Heading,
+  Text,
+  HStack,
+  Center,
+  RadioCard,
 } from "@chakra-ui/react";
+import { Input, Box, Field, Button } from "@chakra-ui/react";
 import { useDocument } from "../contexts/DocumentContext";
 import { ToastContainer, toast } from "react-toastify";
 import { RadioGroup, Stack } from "@chakra-ui/react";
 
 const Form = () => {
+  const items = [
+    { value: "legal", title: "Legal Documents"},
+    { value: "update", title: "Site Construction Progress"},
+  ];
+
   const { setDocumentData } = useDocument();
 
   const [status, setStatus] = useState("need-action")
@@ -22,6 +34,7 @@ const Form = () => {
     supervisorName: "",
     subject: "",
     status: "requires-action", // Default status selection
+    doctype: "",
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -41,7 +54,10 @@ const Form = () => {
   const handleSubmit = async () => {
     try {
       if (!selectedFile) {
-        toast.error("Please select a file to upload!", { position: "bottom-center" });
+        console.error("No file selected");
+        toast.error("Please select a file to upload!", {
+          position: "bottom-center",
+        });
         return;
       }
 
@@ -65,8 +81,11 @@ const Form = () => {
 
       const result = await response.json();
       setDocumentData(result);
-      toast.success("File uploaded successfully!", { position: "bottom-center" });
-
+      console.log("Upload result:", result);
+      toast.success("File uploaded successfully!", {
+        position: "bottom-center",
+      });
+      // Clear form after successful submission
       setFormData({
         date: "",
         supervisorName: "",
@@ -76,7 +95,9 @@ const Form = () => {
       setSelectedFile(null);
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("Failed to submit form. Please try again.", { position: "bottom-center" });
+      toast.error("Failed to submit form. Please try again.", {
+        position: "bottom-center",
+      });
     }
   };
 
@@ -200,7 +221,12 @@ const Form = () => {
       <Button
         m={8}
         onClick={handleSubmit}
-        isDisabled={!selectedFile || !formData.date || !formData.supervisorName || !formData.subject}
+        isDisabled={
+          !selectedFile ||
+          !formData.date ||
+          !formData.supervisorName ||
+          !formData.subject
+        }
       >
         Submit
       </Button>
@@ -209,3 +235,4 @@ const Form = () => {
 };
 
 export default Form;
+
