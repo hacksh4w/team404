@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import { Container, Stack } from '@chakra-ui/react';
+import { Container, VStack, Center, Heading } from '@chakra-ui/react';
 import { Input, Box,
     Button,
     FileUpload,
@@ -70,17 +70,17 @@ const Form = () => {
     
 
   return (
-    <Container>
-    PDF FORM
-    <Box>
-    <Stack>
+    <Container p={4} pt={20}>
+      <Heading> Upload your Report Here!! </Heading>
+    <Box p={8}>
+    <VStack w='80%' pl={10}>
         <Input name="date" placeholder="Date" variant="outline" value={formData.date} onChange={handleChange} />
         <Input name="supervisorName" placeholder="Supervisor Name" variant="outline" value={formData.supervisorName} onChange={handleChange} />
         <Input name="subject" placeholder="Subject" variant="outline" value={formData.subject} onChange={handleChange} />
-    </Stack>
-        <FileUpload.Root accept="image/*" my={8}>
+        </VStack>
+        <FileUpload.Root accept="image/*" my={8} pl={10}>
         <FileUpload.HiddenInput required='required' />
-        <FileUpload.Trigger asChild>
+        <FileUpload.Trigger asChild value={formData.file}>
             <Button variant="outline" size="md">
             <LuFileImage /> Upload Report
             </Button>
@@ -88,7 +88,7 @@ const Form = () => {
         <FileUploadList />
         </FileUpload.Root>
     </Box>
-    <Button m={2} onClick={handleSubmit}>
+    <Button m={2} onClick={handleSubmit} >
     Submit </Button>
     
     </Container>
