@@ -78,4 +78,19 @@ By digitizing and automating construction document workflows, we help **reduce d
 1️⃣ **Clone the Repository**  
 ```bash
 git clone https://github.com/your-repo/construction-management-platform.git
-cd construction-management-platform
+cd team404
+```
+
+2️⃣ **Install & Run frontend**  
+```
+cd frontend
+npm install
+npm run dev
+```
+
+3️⃣ **Install & Run backend**  
+```
+cd backend
+pip install -r requirements.txt
+venv\Scripts\Activate
+```
