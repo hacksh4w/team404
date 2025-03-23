@@ -1,7 +1,8 @@
-import { Box, Flex, Show, HStack, Spacer, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Show, HStack, Spacer, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useState, useEffect } from "react";
+import { GoTypography } from "react-icons/go";
 
 
 const Navbar = () => {
@@ -16,10 +17,11 @@ const Navbar = () => {
 
   
   return (
-    <Box bg="blue.500" color="white" width={["100%"]} m={0} top={0}>
+    <Box bg="blue.700" color="white" width={["100%"]} m={0} top={0}>
       <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
-        <HStack w="32%">
-            Nameee
+        <HStack w="32%" pl={8}>
+           <Text fontSize='2xl' fontFamily='mono'> SiteCheck
+           </Text>
         </HStack>
 
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 display={{ base: "none", md: "flex" }}
                 id="myDIV"
               >
-                <Button className="btnRes" m={4}>
+                <Button className="btnRes" m={4} color='grey.600'>
                 <Link to="/dashboard" m={2}>Dashboard</Link>
                 </Button>
 
