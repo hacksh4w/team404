@@ -9,16 +9,18 @@ import Navbar from './components/Navbar'
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./ProtectedRoute"; 
 import { system } from "@chakra-ui/react/preset";
+import Form from "./pages/Form";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider value={system}>
       <Router>
       <AuthProvider> 
-      <Box width={{ base: "100%", md: "80%" }} margin="auto" p={4}>
+      <Box width={{ base: "100%", md: "100%" }} margin="auto">
         <Navbar />  
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/form" element={<Form />} />
             <Route
               path="/dashboard"
               element={
