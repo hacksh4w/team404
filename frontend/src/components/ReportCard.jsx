@@ -1,28 +1,41 @@
-import { Card, Image, Text, VStack, Button, Stack, Tag } from "@chakra-ui/react";
+import { Box, Image, Badge, Text, VStack, Button, Stack, Tag } from "@chakra-ui/react";
 
 const ReportCard = ({ report }) => {
+    // Define risk and status color mappings
+const riskColorMap = {
+    high: "red",
+    medium: "yellow",
+    low: "green",
+  };
+  
+  const statusColorMap = {
+    ongoing: "blue",
+    finished: "green",
+    "requires-action": "gray",
+  };
+   console.log("Report Data:", report);
+    const riskColor = riskColorMap[report.risk] || "gray";
+    const statusColor = statusColorMap[report.status] || "gray";
   return (
-    <Card maxW="sm" overflow="hidden" p={4} borderRadius="lg" boxShadow="md">
+    <Box maxW="sm" overflow="hidden" borderRadius="lg" boxShadow="md" p={4} border="1px solid #ddd">
       {/* Report Image */}
       <Image
         src={report.imageUrl || "https://via.placeholder.com/300"}
         alt={report.title}
         borderRadius="md"
       />
-
-      {/* Card Content */}
+    
       <VStack align="start" spacing={3} mt={4}>
         <Text fontSize="xl" fontWeight="bold">{report.title}</Text>
 
         {/* Risk Tag */}
-        <Tag colorScheme={report.risk === "high" ? "red" : report.risk === "medium" ? "yellow" : "green"}>
-          Risk: {report.risk}
-        </Tag>
+        <Badge colorPalette={riskColor} p={1} borderRadius="md">
+            Risk: {report.risk || "low"}
+            </Badge>
 
-        {/* Status */}
-        <Tag colorScheme={report.status === "ongoing" ? "blue" : report.status === "finished" ? "green" : "gray"}>
-          {report.status}
-        </Tag>
+            <Badge colorPalette={statusColor} p={1} borderRadius="md">
+            {report.status || "requires-action"}
+            </Badge>
 
         {/* Supervisor & Date */}
         <Text fontSize="sm" color="gray.600">
@@ -31,14 +44,14 @@ const ReportCard = ({ report }) => {
         <Text fontSize="sm" color="gray.600">
           Date: {report.date}
         </Text>
-      </VStack>
+    </VStack>
 
       {/* Actions */}
       <Stack direction="row" mt={4}>
         <Button colorScheme="blue">View</Button>
         <Button variant="outline">Download</Button>
       </Stack>
-    </Card>
+    </Box>
   );
 };
 
