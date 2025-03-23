@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Stack } from "@chakra-ui/react";
+import { Container, Stack, Heading, Text} from "@chakra-ui/react";
 import {
   Input,
   Box,
@@ -69,9 +69,9 @@ const Form = () => {
 
   return (
     <Container>
-      <Box mb={4}>PDF FORM</Box>
+      <Box mb={4}><Heading m={8}> PDF FORM </Heading></Box>
       <Box>
-        <Stack spacing={4}>
+        <Stack spacing={4} w="80%" alignContent='center'>
           <Input
             name="date"
             type="date"
@@ -95,6 +95,8 @@ const Form = () => {
             onChange={handleChange}
           />
           <Input
+            mt={10}
+            w="20%"
             type="file"
             accept="image/*,application/pdf"
             onChange={handleFileChange}
