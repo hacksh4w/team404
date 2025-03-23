@@ -16,8 +16,8 @@ const Dashboard = () => {
       <h2>Dashboard</h2>
       {documentData ? (
           <div>
-              <p><strong>File Name:</strong> {documentData.fileName}</p>
-              <p><strong>Uploaded At:</strong> {documentData.uploadTime}</p>
+              <p><strong>File Name:</strong> {documentData.supervisorName}</p>
+              <p><strong>Uploaded At:</strong> {documentData.date}</p>
           </div>
       ) : (
           <p>No document uploaded yet.</p>
