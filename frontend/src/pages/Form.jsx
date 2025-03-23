@@ -59,7 +59,7 @@ const Form = () => {
       const result = await response.json();
       setDocumentData(result);
       console.log('Upload result:', result);
-      toast.success("File uploaded successfully!", { position: "top-center" });
+      toast.success("File uploaded successfully!", { position: "bottom-center" });
       // Clear form after successful submission
       setFormData({
         date: "",
@@ -70,7 +70,7 @@ const Form = () => {
 
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast.error("Failed to upload file. Please try again.", { position: "top-center" });
+      toast.error("Failed to submit form. Please try again.", { position: "bottom-center" });
     }
   };
 
