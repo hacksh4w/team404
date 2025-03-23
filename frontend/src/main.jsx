@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./ProtectedRoute"; 
 import { system } from "@chakra-ui/react/preset";
+import Form from "./pages/Form";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Navbar />  
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/form" element={<Form />} />
             <Route
               path="/dashboard"
               element={
