@@ -18,7 +18,7 @@ const Navbar = () => {
   
   return (
     <Box bg="blue.700" color="white" width={["100%"]} m={0} top={0}>
-      <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
+      <Flex h={20} alignItems={"center"} justifyContent={"space-between"} p={6}>
         <HStack w="32%" pl={8}>
            <Text fontSize='2xl' fontFamily='mono'> SiteCheck
            </Text>
