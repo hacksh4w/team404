@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Container, Stack } from '@chakra-ui/react';
 import { Input, Box,
     Button,
@@ -7,6 +7,7 @@ import { Input, Box,
     useFileUploadContext,
   } from "@chakra-ui/react"; 
 import { LuFileImage, LuX } from "react-icons/lu"
+
 
 const FileUploadList = () => {
     const fileUpload = useFileUploadContext()
@@ -35,14 +36,47 @@ const FileUploadList = () => {
   }
 
 const Form = () => {
+
+    const [formData, setFormData] = useState({
+        date: '',
+        supervisorName: '',
+        subject: '',
+        files: []
+      });
+    
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+    
+    /*  const handleFileChange = (event) => {
+        const selectedFiles = Array.from(event.target.files);
+        setFormData((prevData) => ({
+          ...prevData,
+          files: [...prevData.files, ...selectedFiles]
+        }));
+      };
+    
+      const handleRemoveFile = (index) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          files: prevData.files.filter((_, i) => i !== index)
+        }));
+      }; */
+    
+      const handleSubmit = () => {
+        console.log("Form Submitted:", formData);
+        // Handle form submission logic
+      };
+    
+
   return (
     <Container>
     PDF FORM
     <Box>
     <Stack>
-    <Input placeholder="Date" variant="outline" />
-    <Input placeholder="Supervisor Name" variant="outline" />
-    <Input placeholder="Subject" variant="outline" />
+        <Input name="date" placeholder="Date" variant="outline" value={formData.date} onChange={handleChange} />
+        <Input name="supervisorName" placeholder="Supervisor Name" variant="outline" value={formData.supervisorName} onChange={handleChange} />
+        <Input name="subject" placeholder="Subject" variant="outline" value={formData.subject} onChange={handleChange} />
     </Stack>
         <FileUpload.Root accept="image/*" my={8}>
         <FileUpload.HiddenInput />
@@ -54,7 +88,8 @@ const Form = () => {
         <FileUploadList />
         </FileUpload.Root>
     </Box>
-    <Button m={2}>Submit </Button>
+    <Button m={2} onClick={handleSubmit}>
+    Submit </Button>
     
     </Container>
   )
