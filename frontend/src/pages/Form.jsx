@@ -41,7 +41,7 @@ const Form = () => {
         date: '',
         supervisorName: '',
         subject: '',
-        files: []
+        file: []
       });
     
       const handleChange = (e) => {
@@ -79,9 +79,9 @@ const Form = () => {
         <Input name="subject" placeholder="Subject" variant="outline" value={formData.subject} onChange={handleChange} />
     </Stack>
         <FileUpload.Root accept="image/*" my={8}>
-        <FileUpload.HiddenInput />
-        <FileUpload.Trigger asChild>
-            <Button variant="outline" size="md" >
+        <FileUpload.HiddenInput required='required' />
+        <FileUpload.Trigger asChild value={'file'}>
+            <Button variant="outline" size="md">
             <LuFileImage /> Upload Report
             </Button>
         </FileUpload.Trigger>
