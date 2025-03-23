@@ -6,7 +6,13 @@ from tesseract_scan import extract_text_from_image  # Import the function
 
 
 app = Flask(__name__)
-CORS(app)  # This allows requests from your React frontend
+CORS(app, resources={
+    r"/*": {
+        "origins": ["http://localhost:5173"],  # Add your React dev server origin
+        "methods": ["GET", "POST"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # Create uploads folder if it doesn't exist
 UPLOAD_FOLDER = 'uploads'
