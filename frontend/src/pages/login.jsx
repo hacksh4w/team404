@@ -36,7 +36,7 @@ const LoginPage = () => {
             <Input
               type="email"
               placeholder="Enter your email"
-              focusBorderColor="blue.400"
+            //  focusBorderColor="blue.400"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -44,7 +44,7 @@ const LoginPage = () => {
             <Input
               type="password"
               placeholder="Enter your password"
-              focusBorderColor="blue.400"
+             // focusBorderColor="blue.400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

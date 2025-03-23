@@ -52,8 +52,8 @@ const Navbar = () => {
                     {" "}
                     <b>Profile</b>
                   </a>
-                </Button> */}
-
+                </Button>
+              */}
               </HStack>
             </HStack>  
         </Flex>
