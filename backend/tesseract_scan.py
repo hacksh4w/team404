@@ -35,7 +35,7 @@ def extract_text_from_image(image_path):
             'extracted_text': text,
             'title': title[0],
             'word_count': len(text.split()),
-            'has_numbers': any(char.isdigit() for char in text)
+            'has_numbers': any(char.isdigit() for char in text),
             'risk_level': risk_level
         }
         
