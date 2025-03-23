@@ -9,8 +9,9 @@ import ProtectedRoute from "./ProtectedRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
+    
       <Router>
+      <AuthProvider>        
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route
@@ -23,7 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
+        </AuthProvider>
       </Router>
-    </AuthProvider>
+    
   </React.StrictMode>
 );
