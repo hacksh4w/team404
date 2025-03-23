@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Stack, Heading, Text} from "@chakra-ui/react";
+import { Container, VStack, Heading, Text, HStack, Center} from "@chakra-ui/react";
 import {
   Input,
   Box,
@@ -30,8 +30,8 @@ const Form = () => {
   const handleSubmit = async () => {
     try {
       if (!selectedFile) {
-        toast.error("Please select a file to upload!", { position: "bottom-center" });
         console.error('No file selected');
+        toast.error("Please select a file to upload!", { position: "bottom-center" });
         return;
       }
 
@@ -77,9 +77,43 @@ const Form = () => {
   return (
     <Container>
     <ToastContainer /> 
-      <Box mb={4}><Heading m={8}> PDF FORM </Heading></Box>
-      <Box>
-        <Stack spacing={8} w="80%" alignContent='center'>
+      <Box mb={4}><Heading my={8}> PDF FORM </Heading></Box>
+      <Box >
+      <HStack >
+      <VStack justify='right' w="45%" >
+      <Box mt={4} justify="center">
+      <Input 
+        id="file-upload" 
+        type="file" 
+        accept="image/*,application/pdf" 
+        onChange={handleFileChange} 
+        display="none"  // Hides the default input
+      />
+      
+      <label htmlFor="file-upload">
+        <Button 
+          as="span"  
+          size="md" 
+          colorScheme="blue" 
+          bgGradient="linear(to-r, blue.400, blue.600)" 
+          _hover={{ bgGradient: "linear(to-r, blue.500, blue.700)" }} 
+          px={6} 
+          py={3} 
+          borderRadius="md"
+          cursor="pointer"
+        >
+          📂 Choose File
+        </Button>
+      </label>
+    
+      {selectedFile && (
+        <Text mt={2} fontSize="sm" color="gray.600">
+          Selected File: {selectedFile.name}
+        </Text>
+      )}
+    </Box>
+    </VStack>
+        <VStack spacing={8} w="45%" alignContent='center' justify='right'>
         <Field.Root required>
           <Field.Label>
             Date <Field.RequiredIndicator />
@@ -121,39 +155,9 @@ const Form = () => {
             onChange={handleChange}
           />
           </Field.Root>
-          <Box mt={4} textAlign="center">
-          <Input 
-            id="file-upload" 
-            type="file" 
-            accept="image/*,application/pdf" 
-            onChange={handleFileChange} 
-            display="none"  // Hides the default input
-          />
-          
-          <label htmlFor="file-upload">
-            <Button 
-              as="span"  
-              size="md" 
-              colorScheme="blue" 
-              bgGradient="linear(to-r, blue.400, blue.600)" 
-              _hover={{ bgGradient: "linear(to-r, blue.500, blue.700)" }} 
-              px={6} 
-              py={3} 
-              borderRadius="md"
-              cursor="pointer"
-            >
-              📂 Choose File
-            </Button>
-          </label>
-        
-          {selectedFile && (
-            <Text mt={2} fontSize="sm" color="gray.600">
-              Selected File: {selectedFile.name}
-            </Text>
-          )}
-        </Box>
+          </VStack>
          
-        </Stack>
+        </HStack>
       </Box>
       <Button 
         m={8} 
