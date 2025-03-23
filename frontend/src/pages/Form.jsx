@@ -74,6 +74,7 @@ const Form = () => {
         <Stack spacing={4}>
           <Input
             name="date"
+            type="date"
             placeholder="Date"
             variant="outline"
             value={formData.date}
