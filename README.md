@@ -1,5 +1,5 @@
 # **<div align="center"> SiteCheck </div>**  
-**Team 404** present **SiteCheck** a comprehensive Construction Site Management Platform<
+**Team 404** present **SiteCheck** a comprehensive Construction Site Management Platform
 A comprehensive platform designed to streamline document management and project execution for construction sites. From initial contract handling to real-time progress tracking, our system ensures seamless communication and efficient workflow among stakeholders.
 
 ---
