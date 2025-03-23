@@ -9,6 +9,7 @@ import {
 import { useDocument } from "../contexts/DocumentContext";
 
 const Form = () => {
+  const { setDocumentData } = useDocument();
   const [formData, setFormData] = useState({
     date: "",
     supervisorName: "",
@@ -34,6 +35,7 @@ const Form = () => {
 
       // Create FormData object
       const submitData = new FormData();
+
       
       // Append form fields
       submitData.append('date', formData.date);
@@ -54,6 +56,7 @@ const Form = () => {
       }
 
       const result = await response.json();
+      setDocumentData(result);
       console.log('Upload result:', result);
 
       // Clear form after successful submission
