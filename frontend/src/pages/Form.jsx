@@ -3,8 +3,10 @@ import { Container, Stack, Heading, Text} from "@chakra-ui/react";
 import {
   Input,
   Box,
+  Field,
   Button,
 } from "@chakra-ui/react";
+import { useDocument } from "../contexts/DocumentContext";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -72,6 +74,11 @@ const Form = () => {
       <Box mb={4}><Heading m={8}> PDF FORM </Heading></Box>
       <Box>
         <Stack spacing={4} w="80%" alignContent='center'>
+        <Field.Root required>
+          <Field.Label>
+            Date <Field.RequiredIndicator />
+          </Field.Label>
+        
           <Input
             name="date"
             type="date"
@@ -80,13 +87,23 @@ const Form = () => {
             value={formData.date}
             onChange={handleChange}
           />
-          <Input
+          </Field.Root>
+          <Field.Root required>
+          <Field.Label>
+            Name of Supervisor <Field.RequiredIndicator />
+          </Field.Label>
+            <Input
             name="supervisorName"
             placeholder="Supervisor Name"
             variant="outline"
             value={formData.supervisorName}
             onChange={handleChange}
           />
+          </Field.Root>
+          <Field.Root required>
+          <Field.Label>
+            Subject of Report <Field.RequiredIndicator />
+          </Field.Label>
           <Input
             name="subject"
             placeholder="Subject"
@@ -94,6 +111,7 @@ const Form = () => {
             value={formData.subject}
             onChange={handleChange}
           />
+          </Field.Root>
           <Input
             mt={10}
             w="20%"
