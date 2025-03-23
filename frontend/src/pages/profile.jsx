@@ -11,8 +11,8 @@ const ProfilePage = () => {
             <Avatar.Image src="https://randomuser.me/api/portraits/women/45.jpg" />
         </Avatar.Root>
         <Text fontSize="2xl" fontWeight="bold">Alaka A K</Text>
-        <Badge colorScheme="blue" px={3} py={1} borderRadius="md">Project Manager</Badge>
-        <Text fontSize="sm" color="gray.500">alaka3@example.com</Text>
+        <Badge colorScheme="blue" px={3} py={1} borderRadius="md">Project Supervisor</Badge>
+        <Text fontSize="sm" color="gray.500">admin@gmail.com</Text>
       </VStack>
 
       <Box divideY="16px" my={4} />
