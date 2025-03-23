@@ -80,7 +80,7 @@ const Form = () => {
     </Stack>
         <FileUpload.Root accept="image/*" my={8}>
         <FileUpload.HiddenInput required='required' />
-        <FileUpload.Trigger asChild value={'file'}>
+        <FileUpload.Trigger asChild>
             <Button variant="outline" size="md">
             <LuFileImage /> Upload Report
             </Button>
