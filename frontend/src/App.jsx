@@ -10,6 +10,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { system } from "@chakra-ui/react/preset";
 import Form from "./pages/Form";
 import { useAuth } from './contexts/AuthContext';
+import ProfilePage from './pages/profile';
 // export const ThemeContext = createContext();
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Navbar />  
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/form" element={<Form />} />
             <Route
               path="/dashboard"
@@ -31,6 +33,7 @@ function App() {
                 </ProtectedRoute>
               } //protected routes
             />
+            
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </Box>  
