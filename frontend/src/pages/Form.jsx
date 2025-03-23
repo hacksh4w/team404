@@ -41,27 +41,29 @@ const Form = () => {
         date: '',
         supervisorName: '',
         subject: '',
-        file: []
+        file: null
       });
     
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
     
-    /*  const handleFileChange = (event) => {
-        const selectedFiles = Array.from(event.target.files);
-        setFormData((prevData) => ({
-          ...prevData,
-          files: [...prevData.files, ...selectedFiles]
-        }));
-      };
+      const handleFileUpload = (acceptedFiles) => {
+        if (acceptedFiles.length > 0) {
+            setFormData((prevData) => ({
+                ...prevData,
+                file: acceptedFiles[0]
+            }));
+            console.log("Uploaded File:", acceptedFiles[0]); // Debugging
+        }
+    };
     
       const handleRemoveFile = (index) => {
         setFormData((prevData) => ({
           ...prevData,
           files: prevData.files.filter((_, i) => i !== index)
         }));
-      }; */
+      }; 
     
       const handleSubmit = () => {
         console.log("Form Submitted:", formData);
@@ -73,14 +75,14 @@ const Form = () => {
     <Container p={4} pt={20}>
       <Heading> Upload your Report Here!! </Heading>
     <Box p={8}>
-    <VStack w='80%' pl={10}>
-        <Input name="date" placeholder="Date" variant="outline" value={formData.date} onChange={handleChange} />
-        <Input name="supervisorName" placeholder="Supervisor Name" variant="outline" value={formData.supervisorName} onChange={handleChange} />
+    <VStack w='85%' pl={10}>
+        <Input name="date" type="date" placeholder="Date" variant="outline" value={formData.date} onChange={handleChange} />
+        <Input name="supervisorName" type="text"  required='required' placeholder="Supervisor Name" variant="outline" value={formData.supervisorName} onChange={handleChange} />
         <Input name="subject" placeholder="Subject" variant="outline" value={formData.subject} onChange={handleChange} />
         </VStack>
-        <FileUpload.Root accept="image/*" my={8} pl={10}>
+        <FileUpload.Root accept="image/*" my={8} pl={10} onDrop={handleFileUpload}>
         <FileUpload.HiddenInput required='required' />
-        <FileUpload.Trigger asChild value={formData.file}>
+        <FileUpload.Trigger asChild >
             <Button variant="outline" size="md">
             <LuFileImage /> Upload Report
             </Button>
