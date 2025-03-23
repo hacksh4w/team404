@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css'
+import { supabase}
 // export const ThemeContext = createContext();
 
 function App() {

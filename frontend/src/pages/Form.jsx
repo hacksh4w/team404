@@ -40,11 +40,11 @@ const Form = () => {
     PDF FORM
     <Box>
     <Stack>
-    <Input placeholder="Outline" variant="outline" />
-    <Input placeholder="Outline" variant="outline" />
-    <Input placeholder="Outline" variant="outline" />
+    <Input placeholder="Date" variant="outline" />
+    <Input placeholder="Supervisor Name" variant="outline" />
+    <Input placeholder="Subject" variant="outline" />
     </Stack>
-        <FileUpload.Root accept="image/*" m={8}>
+        <FileUpload.Root accept="image/*" my={8}>
         <FileUpload.HiddenInput />
         <FileUpload.Trigger asChild>
             <Button variant="outline" size="md" >

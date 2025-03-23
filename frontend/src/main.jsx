@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ChakraProvider value={system}>
       <Router>
       <AuthProvider> 
-      <Box width={{ base: "100%", md: "80%" }} margin="auto" p={4}>
+      <Box width={{ base: "100%", md: "100%" }} margin="auto">
         <Navbar />  
           <Routes>
             <Route path="/login" element={<LoginPage />} />
