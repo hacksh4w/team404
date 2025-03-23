@@ -7,6 +7,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useDocument } from "../contexts/DocumentContext";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Form = () => {
   const { setDocumentData } = useDocument();
@@ -29,6 +30,7 @@ const Form = () => {
   const handleSubmit = async () => {
     try {
       if (!selectedFile) {
+        toast.error("Please select a file to upload!", { position: "bottom-center" });
         console.error('No file selected');
         return;
       }
@@ -57,7 +59,7 @@ const Form = () => {
       const result = await response.json();
       setDocumentData(result);
       console.log('Upload result:', result);
-
+      toast.success("File uploaded successfully!", { position: "top-center" });
       // Clear form after successful submission
       setFormData({
         date: "",
@@ -68,11 +70,13 @@ const Form = () => {
 
     } catch (error) {
       console.error('Error submitting form:', error);
+      toast.error("Failed to upload file. Please try again.", { position: "top-center" });
     }
   };
 
   return (
     <Container>
+    <ToastContainer /> 
       <Box mb={4}><Heading m={8}> PDF FORM </Heading></Box>
       <Box>
         <Stack spacing={4} w="80%" alignContent='center'>
