@@ -36,7 +36,6 @@ const Form = () => {
       // Create FormData object
       const submitData = new FormData();
 
-      
       // Append form fields
       submitData.append('date', formData.date);
       submitData.append('supervisorName', formData.supervisorName);
@@ -81,10 +80,12 @@ const Form = () => {
           <Field.Label>
             Date <Field.RequiredIndicator />
           </Field.Label>
-        
+
           <Input
             name="date"
             type="date"
+            focusBorderColor="grey.700"
+            bgColor="red.200"
             placeholder="Date"
             variant="outline"
             value={formData.date}
@@ -99,6 +100,7 @@ const Form = () => {
             name="supervisorName"
             placeholder="Supervisor Name"
             variant="outline"
+            isRequired={true}
             value={formData.supervisorName}
             onChange={handleChange}
           />
@@ -122,6 +124,7 @@ const Form = () => {
             accept="image/*,application/pdf"
             onChange={handleFileChange}
           />
+         
         </Stack>
       </Box>
       <Button 
