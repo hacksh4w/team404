@@ -12,10 +12,12 @@ def extract_text_from_image(image_path):
         
         # Extract text from image
         text = pytesseract.image_to_string(image)
+        title = text.split('\n')
         
         # Basic analysis
         analysis = {
             'extracted_text': text,
+            'title': title[0],
             'word_count': len(text.split()),
             'has_numbers': any(char.isdigit() for char in text)
         }

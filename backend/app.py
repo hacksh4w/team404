@@ -17,7 +17,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Allowed file extensions
-ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'webp'}
 
 @app.route('/test', methods=['GET'])
 def test_route():
