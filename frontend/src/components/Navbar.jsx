@@ -47,12 +47,12 @@ const Navbar = () => {
                 <Link to="/form" m={2}>Upload</Link>
                 </Button>
 
-                <Button className="btnRes" m={4}>
+            {/*  <Button className="btnRes" m={4}>
                   <a href="#Skills">
                     {" "}
                     <b>Profile</b>
                   </a>
-                </Button>
+                </Button> */}
 
               </HStack>
             </HStack>  
